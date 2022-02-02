@@ -10,7 +10,8 @@ def main():
         humidity, temperature = Adafruit_DHT.read_retry(sensor, pinGPIO)
 
         if humidity is not None and temperature is not None:
-            print("Temp={0:0.1f}*C  Humidity={1:0.1f}%".format(time.strftime('%m/%d/%y'), time.strftime('%H:%M'), temperature, humidity))
+            print('{0},{1},{2:0.1f}*C,{3:0.1f}%\r\n'.format(time.strftime('%m/%d/%y'), time.strftime('%H:%M'), temperature, humidity))
+
         else:
             print("Failed to retrieve data from humidity sensor")
 
